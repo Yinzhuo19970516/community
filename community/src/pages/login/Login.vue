@@ -17,7 +17,7 @@
             <input type="checkbox" name="" id=""><span class="checkbox-text">30天记住我</span>
           </div>
           <div class="sign form-item">
-            <input type="submit" value="登录" class="submit">
+            <input type="submit" value="登录" class="submit" @click="isLogin">
           </div>
           <div class="form-item">
             <a href="" class="a-forget">忘记密码？</a>
@@ -43,6 +43,33 @@ export default {
       email: '',
       pwd: '',
       error: ''
+    }
+  },
+  computed: {
+    user() {
+      return this.$store.state.user
+    }
+  },
+  methods: {
+    isLogin: function() {
+      //由于没有后台提供数据，所以这里简单实现登录逻辑，以后修改
+      if (this.email === "111" && this.pwd === "111" ) {
+        //账号和密码都是111
+        let users = {
+          "email": "111",
+          "password": "111",
+          "login": true
+        }
+        this.$store.commit("isLogin", users)
+        this.email=''
+				this.pwd= ''
+				this.$router.push({ path: 'home' }) 
+      } else {
+        this.email=''
+        this.pwd= ''
+        this.error = "请输入正确的账号和密码！"
+        alert(this.error)
+      }
     }
   }
 };

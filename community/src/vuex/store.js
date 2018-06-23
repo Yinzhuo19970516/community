@@ -4,7 +4,9 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  user: {}
+  user: {
+    'login': false
+  }
 }
 
 const mutations = {
@@ -13,7 +15,7 @@ const mutations = {
   }
 }
 
-export default Vuex.Store({
+export default new Vuex.Store({
   state,
   mutations
 })
