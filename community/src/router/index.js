@@ -40,6 +40,10 @@ export default new Router({
       path: '/info',
       name: 'Info',
       component: Info
+    },
+    {
+      path: '*',  //路由器添加基本配置重定向到'home'
+      redirect: '/home'
     }
   ]
 })
