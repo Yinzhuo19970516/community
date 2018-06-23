@@ -8,10 +8,10 @@
       <div class="panel">
         <form>
           <div class="form-item">
-            <span><input type="text" class="textbox" placeholder="请输入账号"></span>
+            <span><input type="text" class="textbox" placeholder="请输入账号" v-model="email"></span>
           </div>
           <div class="form-item">
-            <span><input type="password" class="password" placeholder="请输入密码"></span>
+            <span><input type="password" class="password" placeholder="请输入密码" v-model="pwd"></span>
           </div>
           <div>
             <input type="checkbox" name="" id=""><span class="checkbox-text">30天记住我</span>
@@ -38,7 +38,12 @@
 
 export default {
   name: "Login",
-  components: {
+  data() {
+    return {
+      email: '',
+      pwd: '',
+      error: ''
+    }
   }
 };
 </script>
