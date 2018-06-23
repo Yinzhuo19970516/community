@@ -1,13 +1,19 @@
 <template>
-  <h1>personal</h1>
+  <div class="personal-page">
+    <p-header></p-header>
+  </div>
 </template>
 
 <script>
+import PHeader from 'common/components/Header'
 export default {
-
+  name: 'Pesonal',
+  components: {
+    PHeader
+  }
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
 
 </style>
