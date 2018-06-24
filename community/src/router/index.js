@@ -29,17 +29,33 @@ export default new Router({
     {
       path: '/personal',
       name: 'Personal',
-      component: Personal
+      component: Personal,
+      meta: {
+        // meta元素
+        requireAuth: true
+      }
     },
     {
       path: '/message',
       name: 'Message',
-      component: Message
+      component: Message,
+      meta: {
+        // meta元素
+        requireAuth: true
+      }
     },
     {
       path: '/info',
       name: 'Info',
-      component: Info
+      component: Info,
+      meta: {
+        // meta元素
+        requireAuth: true
+      }
+    },
+    {
+      path: '*', // 路由器添加基本配置重定向到'home'
+      redirect: '/home'
     }
   ]
 })
